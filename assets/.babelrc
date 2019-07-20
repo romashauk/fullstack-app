@@ -1,0 +1,41 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false,
+        "targets": {
+          "chrome": 52,
+          "ie": 11
+        },
+        "include": [
+          "transform-es2015-classes",
+          "transform-es2015-arrow-functions",
+          "es6.map",
+          "transform-regenerator"
+        ],
+        "exclude": ["es6.set"]
+      }
+    ],
+    "stage-0",
+    "react"
+  ],
+  "plugins": [
+    [
+      "transform-imports",
+      {
+        "react-bootstrap": {
+          "transform": "react-bootstrap/lib/${member}",
+          "preventFullImport": true
+        },
+        "lodash": {
+          "transform": "lodash/${member}"
+        },
+        "react-router-dom": {
+          "transform": "react-router-dom/${member}",
+          "preventFullImport": true
+        }
+      }
+    ]
+  ]
+}
