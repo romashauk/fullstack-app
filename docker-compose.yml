@@ -14,21 +14,18 @@ services:
         command: npm start
         ports:
             - 4000:4000
-        # depends_on:
-        #     - mongodb
+        depends_on:
+            - mongodb
         environment:
             - mongoURI=mongodb://mongodb:27017/graphql-development
     react:
-        image: node:12.2.0-alpine
-        build:
-            context: .
-            dockerfile: ./docker/react/Dockerfile
+        image: node:10-alpine
         ports:
             - '7070:7070'
             - '7777:7777'
         environment:
             - NODE_ENV=dev
-        working_dir: /var/app/assets/assets
-        command: npm start
+        working_dir: /var/app/assets
+        command: npm run start
         volumes:
             - ./:/var/app/assets

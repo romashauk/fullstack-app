@@ -13,7 +13,7 @@
         "boilerplate",
         "server"
     ],
-    "author": "Leonardo Maldonado <leonardomso11@gmail.com>",
+    "author": "Roma Shauk <shauk60@gmail.com>",
     "license": "MIT",
     "devDependencies": {
         "@babel/cli": "^7.1.2",
@@ -63,5 +63,11 @@
         "transform": {
             "^.+\\.js$": "babel-jest"
         }
+    },
+    "nodemonConfig": {
+        "ignore": [
+            "assets",
+            "assets/*.js"
+        ]
     }
 }
