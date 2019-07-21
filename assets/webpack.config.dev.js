@@ -35,7 +35,13 @@ module.exports = {
         publicPath: '/',
         historyApiFallback: {
             index: 'DefaultLayout.js.html'
-        }
+        },
+        proxy: [
+            {
+                context: ['/graphql'],
+                target: 'http://localhost:4000/graphql'
+            }
+        ]
     },
     module: {
         rules: [

@@ -1,0 +1,13 @@
+version: '3'
+services:
+    node:
+        image: node:10-alpine
+        ports:
+            - '8080:8080'
+            - '8888:8888'
+        environment:
+            - NODE_ENV=dev
+        working_dir: /var/app
+        command: npm run start
+        volumes:
+            - ./:/var/app

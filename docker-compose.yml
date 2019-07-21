@@ -18,14 +18,3 @@ services:
             - mongodb
         environment:
             - mongoURI=mongodb://mongodb:27017/graphql-development
-    react:
-        image: node:10-alpine
-        ports:
-            - '7070:7070'
-            - '7777:7777'
-        environment:
-            - NODE_ENV=dev
-        working_dir: /var/app/assets
-        command: npm run start
-        volumes:
-            - ./:/var/app/assets

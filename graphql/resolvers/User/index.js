@@ -15,6 +15,7 @@ export default {
             return users.map(u => ({
                 _id: u._id.toString(),
                 name: u.name,
+                password: u.password,
                 email: u.email,
                 age: u.age,
                 posts: u.posts,
@@ -24,10 +25,13 @@ export default {
     },
     Mutation: {
         createUser: async (parent, {user}, context, info) => {
+            const users = await User.find({})
+                .populate()
+                .exec();
             const newUser = await new User({
-                name: user.name,
                 email: user.email,
-                _id: user._id
+                password: user.password,
+                _id: users.length + 1
             });
 
             return new Promise((resolve, reject) => {

@@ -6,6 +6,7 @@ export default `
     age: Int!
     posts: [Post!]!
     comments: [Comment!]!
+    password: String!
   }
 
   type Query {
@@ -20,9 +21,9 @@ export default `
   }
 
   input CreateUserInput {
-    name: String!
+    password: String!
     email: String!
-    _id: String!
+    _id:String
   }
   
   input UpdateUserInput {
